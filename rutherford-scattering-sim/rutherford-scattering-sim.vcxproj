@@ -131,7 +131,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="opengl_visualisation.cpp" />
     <ClCompile Include="rutherford-scattering-sim.cpp" />
   </ItemGroup>
   <ItemGroup>
