@@ -1,6 +1,8 @@
+#include "includes.h"
 #include <iostream>
 
-int main()
+int main(int argc, char* argv[])
 {
-    std::cout << "Hello World!\n";
+	//parse options for configuration
+	//run
 }
