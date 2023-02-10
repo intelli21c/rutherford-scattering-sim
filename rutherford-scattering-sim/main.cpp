@@ -5,6 +5,6 @@
 int main(int argc, char* argv[])
 {
 	//parse options for configuration
-	//run
-	singleparticle1();
+	//singleparticle1();
+	thompsonsingle();
 }
