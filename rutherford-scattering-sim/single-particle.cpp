@@ -4,9 +4,15 @@
 #include <iostream>
 #include <fstream>
 
+int scale = 100;
+
+const int au = 79;
+const int he = 2;
+
 float ax(float x, float y)
 {
 	return 100 * x / sqrt(pow((pow(x, 2) + pow(y, 2)), 3));
+	//return  scale * au * he * x / (4 * PI * E0 * sqrt(pow((pow(x, 2) + pow(y, 2)), 3)));
 }
 
 float ay(float x, float y)
@@ -19,28 +25,15 @@ float vf(float v)
 	return v;
 }
 
-void singleparticle1()
+void singleparticle(int iter, float res, char* name, float alpx, float alpy, float alpvx, float alpvy)
 {
-	float alpx = -100;
-	float alpy = 0.5;
-	float alpvx = 10;
-	float alpvy = 0;
-
-	float k[4][4] = { 0 }; //k1234 for x, y, vx, vy
-
-	int iter = 5000;
-	float res = 0.01;
-
-
 	std::ofstream f;
-	f.open("out2.csv", std::ios::out);
-	if (!f.is_open()) std::cout << "fuck\n";
-	//getchar();
+	makeoutputfile(&f);
+	if (!f.is_open()) std::cout << "file not open...\n";
 	f << "x, y, vx, vy\n";
 	f << alpx << ", " << alpy << ", " << alpvx << ", " << alpvx << "\n";
 
-	std::cout << "x, y, vx, vy\n";
-	std::cout << alpx << ", " << alpy << ", " << alpvx << ", " << alpvx << "\n";
+	float k[4][4] = { 0 }; //k1234 for x, y, vx, vy
 	for (int i = 0; i < iter; i++)
 	{
 		k[0][0] = vf(alpvx);
@@ -72,5 +65,6 @@ void singleparticle1()
 
 		std::cout << alpx << ", " << alpy << ", " << alpvx << ", " << alpvx << "\n";
 	}
+	std::cout << "done!\n";
 	f.close();
 }

@@ -21,6 +21,12 @@
     <ClCompile Include="single-particle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="multi-goldfilm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes.h">
